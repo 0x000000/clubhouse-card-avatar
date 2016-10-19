@@ -21,7 +21,7 @@
 
   var storyCardsObserver = new MutationObserver(function(mutations) {
     mutations.forEach(function(mutation) {
-      mutation.target.querySelectorAll("[data-model='Story']").forEach(function(story) {
+      mutation.target.querySelectorAll(".story-link[data-model='Story']").forEach(function(story) {
         story.querySelectorAll("[data-model='User']").forEach(function(user) {
           var userId = (user.attributes["data-id"] || {}).value;
           if (userId && localStorage.getItem(NAMESPACE + userId)) {
