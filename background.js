@@ -5,7 +5,7 @@
   if (TEAM_PAGE.test(location.pathname)) { // refresh team photos
     var teamObserver = new MutationObserver(function(mutations) {
       mutations.forEach(function(mutation) {
-        mutation.target.querySelectorAll("[data-model='User']").forEach(function(user) {
+        mutation.target.querySelectorAll("[data-model='Profile']").forEach(function(user) {
           var userId = (user.attributes["data-id"] || {}).value;
           var avatarSrc = (user.querySelector("img.avatar") || {}).src;
 
@@ -22,7 +22,7 @@
   var storyCardsObserver = new MutationObserver(function(mutations) {
     mutations.forEach(function(mutation) {
       mutation.target.querySelectorAll(".story-link[data-model='Story']").forEach(function(story) {
-        story.querySelectorAll("[data-model='User']").forEach(function(user) {
+        story.querySelectorAll("[data-model='Profile']").forEach(function(user) {
           var userId = (user.attributes["data-id"] || {}).value;
           if (userId && localStorage.getItem(NAMESPACE + userId)) {
             user.innerHTML = "<img class='CCA-avatar' src='" + localStorage.getItem(NAMESPACE + userId) + "' height='20' width='20' />";
