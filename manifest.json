@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Clubhouse Card Avatars",
   "description": "This extension shows people's avatars on each card instead of initials",
-  "version": "1.0.2",
+  "version": "1.0.3",
 
   "browser_action": {
     "default_icon": "icon128.png"
